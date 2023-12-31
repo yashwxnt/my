@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Gratitude for Your Friendship</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* Your custom styles */
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .parallax {
+            /* Background image for parallax effect */
+            background-image: url('/images/im.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensures the image stays within the container */
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .message-card {
+            background-image: url('/images/bg.png'); /* Replace with your desired image for the message card */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: auto; /* Adjust the height as needed */
+            width: auto;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensures the image stays within the container */
+            border-radius: 8px; /* Add border-radius or other styles */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message-card-content {
+            padding: 20px;
+        }
+        
+        .image-slideshow img {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Envelope styles */
+        #envelope {
+            background: white;
+            margin: 200px auto;
+            height: 200px;
+            position: relative;
+            width: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            animation: floaty 1s infinite;
+        }
+
+        @keyframes floaty {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(0, 12px);
+            }
+        }
+
+        .sides {
+            border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
+            border-style: solid;
+            border-width: 90px 170px;
+            bottom: 0;
+            height: 0;
+            left: 0;
+            position: absolute;
+            width: 0;
+        }
+
+        .top {
+            border-color: white transparent transparent;
+            border-style: solid;
+            border-width: 108px 140px 90px 140px;
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transform-origin: 50% 0;
+            width: 0;
+        }
+        body {
+        margin:0;
+        background:mistyrose;
+    }
+    .message-card,
+    .image-slideshow,
+    .video-slideshow {
+        display: none;
+    }
+/* wings */
+
+.wing {
+    background:white;
+     border-radius: 12px 20px 60px 20px;
+     width:120px;
+     height:50px; margin-top:270px;
+     position:absolute;
+}
+
+/* right wing */
+
+.right {
+    margin-left:-60px;
+    left:50%;
+    animation:flap1 1s infinite;
+    border-bottom:3px solid rgba(0,0,0,.08);
+     border-radius: 12px 20px 60px 20px;
+    transform:rotate(-10deg) translate(250px,0);
+}
+
+@keyframes flap1 {
+    0% {
+        transform:rotate(-10deg) translate(250px,0);
+    }
+    
+    50% {
+        transform:rotate(-5deg) translate(250px,0);
+    }
+}
+.right:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+    height:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 20px 20px 60px 20px;
+    transform:rotate(20deg) translate(-1px,0);
+    margin-top:38px;
+}
+
+.right:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+    transform:rotate(29deg) translate(-8px,0);
+    height:30%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 0px 0px 60px 70px;
+    margin-top:66px;
+}
+
+/* left wing */
+
+.left {
+    border-radius:12px 20px 20px 60px;
+     margin-left:-60px;
+    left:50%;
+     animation:flap2 1s infinite;
+      border-bottom:3px solid rgba(0,0,0,.08);
+    transform:rotate(10deg) translate(-248px, 0);
+}
+
+@keyframes flap2 {
+    0% {
+        transform:rotate(10deg) translate(-248px,0);
+    }
+    
+    50% {
+        transform:rotate(5deg) translate(-248px,0);
+    }
+}
+
+
+.left:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    transform:translate(46%,0) rotate(-20deg);
+    height:60%;
+      border-radius:12px 20px 70px 70px;
+    margin-top:40px;
+}
+
+.left:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    height:30%;
+     transform:translate(164%,0) rotate(-34deg);
+     border-radius:0px 0px 70px 60px;
+    margin-top:58px;
+}
+
+/* heart */
+
+.heart{
+    position: absolute;
+    width: 120px;
+    z-index:99999;
+    height: 100px;
+    margin-left:-50px;
+    left:50%;
+     animation: heart 1s infinite;
+    transform:scale(.8);
+    transition:.6s;
+    margin-top:270px;
+    
+}
+.heart:before,
+.heart:after{
+    content: "";
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    border-radius: 50px 50px 6px 6px;
+    background: crimson;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(.8) translate(0,0);
+    }
+    
+    50% {
+        transform: scale(.92) translate(0, 12px);
+    }
+    
+    100% {
+        transform:scale(.8);
+    }
+}
+
+/* envelope */
+
+  #envelope {
+  background: white; 
+  margin: 400px auto;
+  height: 200px;
+  position: relative;
+  width: 320px;
+  border-radius:8px;
+  overflow:hidden;
+  animation: floaty 1s infinite;
+}
+
+@keyframes floaty {
+    0% {
+        transform:translate(0,0);
+    }
+    
+    50% {
+        transform:translate(0, 12px);
+    }
+}
+
+/* bottom, left, and right sides */
+.sides {
+  border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
+  border-style: solid;
+  border-width: 90px 170px;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+/* top side */
+
+.top {
+  border-color: white transparent transparent;
+  border-style: solid;
+  border-width: 108px 140px 90px 140px;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 0;
+  width: 0;
+}
+
+    </style>
+</head>
+<body>
+<!-- Parallax section with background image -->
+<div class="parallax">  
+    <div class="container">
+        <h1 class="display-4 animate__animated animate__bounceIn">In Gratitude for Your Friendship</h1>
+        <p class="lead animate__animated animate__fadeIn">You're embarking on a new journey, but our memories will last a lifetime.</p>
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" onclick="scrollToEnvelope()" role="button">See Messages</a>
+    </div>
+</div>
+<div class="wing right"></div>
+    <div class="wing left"></div>
+    <div class="heart"></div>
+    <div id="envelope" onclick="revealMessage()">
+        <div class="top"></div>
+        <div class="sides"></div>
+    </div>
+<!-- Messages and memories section -->
+<div id="messages" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4 animate__animated animate__fadeIn">
+                <!-- Text content for the poem -->
+                <div class="message-card">
+                    <p> <br><br> As I sit down to write this, I find myself reflecting on our incredible journey together. Over almost five years, we've faced everything hand in hand—the highs, the lows, and everything in between.
+                        You're not just a friend to me; you're family. Your support has been my strength, something I can't hide or deny.
+                        <br><br>
+                        Now, as you embark on a new chapter in your life, I can't help but feel a mix of emotions. I see the excitement in your eyes as you chase your dreams in distant places. But the thought of not having you by my side leaves me feeling a bit lost and lonely.
+                        <br><br>
+                        I know you'll find new friendships and experiences in your new journey, and I'll be there to celebrate your successes and joys. But deep down, there's a part of me that will always miss your laughter, your kindness, and your presence. Your absence will be felt, and I might shed a few tears thinking about it.
+                        <br><br>
+                        You're more than a friend; you're like a sister to me—forever in my heart. Remember, no matter where life takes you, a piece of my heart will always be your home.
+                        
+                        So go ahead, chase those dreams, embrace new adventures, and make the most of every moment. Just know that your friendship means the world to me, and I'll treasure it always. </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="image-slideshow">
+                    <!-- Image slideshow content -->
+                    <img src="/images/1.jpg" alt="Image 1" class="img-fluid">
+                    <img src="/images/2.jpg" class="img-fluid" alt="Image 2">
+                    <img src="images/3.jpg" class="img-fluid" alt="Image 3">
+                    <img src="images/4.jpg" class="img-fluid" alt="Image 4">
+                    <img src="images/5.jpg" class="img-fluid" alt="Image 5">
+                    <img src="images/6.jpg" class="img-fluid" alt="Image 6">
+                    <img src="images/7.jpg" class="img-fluid" alt="Image 7">
+                    <img src="images/8.jpg" class="img-fluid" alt="Image 8">
+                    <img src="images/9.jpg" class="img-fluid" alt="Image 9">
+                    <img src="images/10.jpg" class="img-fluid" alt="Image 10">
+                    <img src="images/11.jpg" class="img-fluid" alt="Image 11">
+                    <img src="images/12.jpg" class="img-fluid" alt="Image 12">
+                    <img src="images/13.jpg" class="img-fluid" alt="Image 13">
+                    <img src="images/14.jpg" class="img-fluid" alt="Image 14">
+                    <img src="images/15.jpg" class="img-fluid" alt="Image 15">
+                    <img src="images/16.jpg" class="img-fluid" alt="Image 16">
+                    <img src="images/17.jpg" class="img-fluid" alt="Image 17">
+                    <img src="images/18.jpg" class="img-fluid" alt="Image 18">
+                    <img src="images/19.jpg" class="img-fluid" alt="Image 19">
+                    <img src="images/20.jpg" class="img-fluid" alt="Image 20">
+                    <img src="images/21.jpg" class="img-fluid" alt="Image 21">
+                    <img src="images/22.jpg" class="img-fluid" alt="Image 22">
+                    <img src="images/23.jpg" class="img-fluid" alt="Image 23">
+                    <img src="images/24.jpg" class="img-fluid" alt="Image 24">
+                    <img src="images/25.jpg" class="img-fluid" alt="Image 25">
+                    <img src="images/26.jpg" class="img-fluid" alt="Image 26">
+                    <img src="images/27.jpg" class="img-fluid" alt="Image 27">
+                    <img src="images/28.jpg" class="img-fluid" alt="Image 28">
+                    <img src="images/29.jpg" class="img-fluid" alt="Image 29">
+                    <img src="images/30.jpg" class="img-fluid" alt="Image 30">
+                    <img src="images/31.jpg" class="img-fluid" alt="Image 31">
+                    <img src="images/32.jpg" class="img-fluid" alt="image 32">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="video-slideshow">
+                            <h2 class="text-center mb-4">Memorable Moments</h2>
+                            <video width="100%" controls>
+                                <source src="images/1v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/2v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/3v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/4v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/5v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/6v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/7v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/8v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/9v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video width="100%" controls>
+                                <source src="images/10v.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Your existing JavaScript and jQuery code here -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function scrollToEnvelope() {
+        // Scroll to the envelope section
+        $('html, body').animate({
+            scrollTop: $("#envelope").offset().top
+        }, 1000);
+    }
+    function revealMessage() {
+        // Hide the wings and heart
+        $('.wing').fadeOut();
+        $('.heart').fadeOut();
+
+        // Show the message and image slideshow
+        $('.message-card').fadeIn();
+        $('.image-slideshow').fadeIn();
+        $('.video-slideshow').fadeIn();
+        // Hide the envelope after revealing content
+        $('#envelope').fadeOut();
+    }
+
+    $(document).ready(function() {
+        var images = $(".image-slideshow img");
+        var index = 0;
+
+        function showNextImage() {
+            images.hide();
+            $(images[index]).fadeIn(1000).delay(2000).fadeOut(1000, function() {
+                index = (index + 1) % images.length;
+                showNextImage();
+            });
+        }
+
+        showNextImage();
+    });
+    $(document).ready(function() {
+            // Hide all videos initially except the first one
+            $(".video-slideshow video").not(":first").hide();
+
+            // Play the next video after the current one ends
+            $(".video-slideshow video").on("ended", function() {
+                $(this).fadeOut(1000);
+                $(this).next().fadeIn(1000);
+            });
+        });
+    function openEnvelope() {
+        // Add actions to perform when the envelope is clicked
+        alert('Envelope clicked!');
+        // You can add more actions here, like revealing content or triggering animations.
+    }
+</script>
+</body>
+</html>
